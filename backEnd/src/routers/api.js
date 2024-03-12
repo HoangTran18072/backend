@@ -7,12 +7,12 @@ const {
     getTierList,
     postTierList
 } = require('../controlers/home');
-
+const {accessLevelMiddlewave} = require("../middlewave/accessLevel")
 const router = express.Router()
 
 //khai bao router 
 router.get('/', helloWorld)
-router.get('/transactions', getTransactions)
+router.get('/transactions',accessLevelMiddlewave(2),  getTransactions)
 router.get('/transaction/:key', getTransactionsByKey)
 router.post('/transaction', postTransaction)
 
