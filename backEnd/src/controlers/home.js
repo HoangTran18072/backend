@@ -42,6 +42,7 @@ const postTierList = (req, res) =>
     tierlist.save().then(() => res.status(200).send('save success')
     ).catch(() => res.status(404).send('something wrong!'))
 }
+
 module.exports = {
     helloWorld,
     postTransaction,
